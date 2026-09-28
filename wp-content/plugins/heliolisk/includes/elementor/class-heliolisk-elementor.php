@@ -101,6 +101,15 @@ final class Heliolisk_Elementor
 	}
 
 	/**
+	 * Cache-busting version for a widget asset: the file's last-modified
+	 * time, so browsers re-fetch it whenever it's edited.
+	 */
+	private static function asset_version($file)
+	{
+		return file_exists($file) ? (string) filemtime($file) : HELIOLISK_VERSION;
+	}
+
+	/**
 	 * The registered style handle for a given widget slug.
 	 */
 	public static function style_handle($slug)
@@ -196,7 +205,8 @@ final class Heliolisk_Elementor
 	 */
 	public function register_assets()
 	{
-		$widgets_url = HELIOLISK_PLUGIN_URL . 'includes/elementor/widgets/';
+		$widgets_url  = HELIOLISK_PLUGIN_URL . 'includes/elementor/widgets/';
+		$widgets_path = __DIR__ . '/widgets/';
 
 		foreach (self::widgets() as $slug => $widget) {
 			if ($widget['style']) {
@@ -204,7 +214,7 @@ final class Heliolisk_Elementor
 					self::style_handle($slug),
 					$widgets_url . $slug . '/' . $widget['style'],
 					array(),
-					HELIOLISK_VERSION
+					self::asset_version($widgets_path . $slug . '/' . $widget['style'])
 				);
 			}
 
@@ -213,7 +223,7 @@ final class Heliolisk_Elementor
 					self::script_handle($slug),
 					$widgets_url . $slug . '/' . $widget['script'],
 					array('elementor-frontend'),
-					HELIOLISK_VERSION,
+					self::asset_version($widgets_path . $slug . '/' . $widget['script']),
 					true
 				);
 			}

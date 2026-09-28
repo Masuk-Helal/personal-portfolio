@@ -35,6 +35,41 @@
     if (e.key === 'Escape' && navLinks.classList.contains('open')) closeNav();
   });
 
+  // scroll-spy: mark the nav item whose section is currently in view.
+  // Only same-page anchors resolve to an element here; links rewritten to the
+  // home URL by the theme (PHP) are skipped automatically.
+  const spyLinks = Array.from(document.querySelectorAll('#navLinks a.nav-anchor')).reduce((acc, a) => {
+    const hash = a.getAttribute('href') || '';
+    if (hash.length < 2 || hash[0] !== '#') return acc;
+    let section = null;
+    try { section = document.querySelector(hash); } catch (e) { /* not a valid selector */ }
+    if (section) acc.push({ a, section });
+    return acc;
+  }, []);
+
+  // A "Home" menu item that links to the front page itself (not "#home") is
+  // marked current by WordPress for the whole page, so it would stay
+  // underlined next to the scroll-spy's item. Let the spy drive it via #home.
+  const homeLink = document.querySelector('#navLinks li.menu-item-home > a');
+  const homeSection = document.getElementById('home');
+  if (homeLink && homeSection && !spyLinks.some(({ a }) => a === homeLink)) {
+    spyLinks.unshift({ a: homeLink, section: homeSection });
+  }
+
+  if (spyLinks.length && 'IntersectionObserver' in window) {
+    document.querySelectorAll('#navLinks li.current-menu-item, #navLinks li.current_page_item').forEach(li => {
+      li.classList.remove('current-menu-item', 'current_page_item');
+    });
+
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        spyLinks.forEach(({ a, section }) => a.classList.toggle('current-menu-item', section === entry.target));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    spyLinks.forEach(({ section }) => spy.observe(section));
+  }
+
   // scroll reveal + number count-up
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function animateCount(el){

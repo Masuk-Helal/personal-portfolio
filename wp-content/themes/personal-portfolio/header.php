@@ -66,19 +66,20 @@ $personal_portfolio_social_links = array(
   <div class="container d-flex align-items-center justify-content-between">
     <a href="<?php echo esc_url( $personal_portfolio_logo_link ); ?>" class="logo d-flex align-items-center gap-3" style="text-decoration: none;"><span class="logo-mark d-flex align-items-center justify-content-center"><img src="<?php echo esc_url( $personal_portfolio_logo_image ); ?>" alt="<?php echo esc_attr( $personal_portfolio_logo_text ); ?>"></span><span class="logo-word"><?php echo esc_html( $personal_portfolio_logo_text ); ?></span></a>
     <div class="nav-backdrop" id="navBackdrop"></div>
-    <!-- Nav items are intentionally fixed here (not Customizer-editable) — only their color/hover/underline style is, via Customize → Header. -->
-    <?php $personal_portfolio_home_url = home_url( '/' ); ?>
-    <nav class="nav-links d-flex align-items-center gap-5" id="navLinks">
-      <ul class="nav-links-list">
-        <li><a href="<?php echo esc_url( $personal_portfolio_home_url . '#home' ); ?>">Home</a></li>
-        <li><a href="<?php echo esc_url( $personal_portfolio_home_url . '#about' ); ?>">About</a></li>
-        <li><a href="<?php echo esc_url( $personal_portfolio_home_url . '#analytics' ); ?>">Analytics</a></li>
-        <li><a href="<?php echo esc_url( $personal_portfolio_home_url . '#work' ); ?>">Work</a></li>
-        <li><a href="<?php echo esc_url( $personal_portfolio_home_url . '#experience' ); ?>">Experience</a></li>
-        <li><a href="<?php echo esc_url( $personal_portfolio_home_url . '#skills' ); ?>">Skills</a></li>
-        <li><a href="<?php echo esc_url( $personal_portfolio_home_url . '#collaborators' ); ?>">Collaborators</a></li>
-        <li><a href="<?php echo esc_url( $personal_portfolio_home_url . '#contact' ); ?>">Contact</a></li>
-      </ul>
+    <?php // Items are managed in Appearance → Menus ("Primary Menu") or Customize → Menu Locations; falls back to the theme's own section links when no menu is assigned. ?>
+    <nav class="nav-links d-flex align-items-center gap-5" id="navLinks" aria-label="<?php esc_attr_e( 'Primary', 'personal-portfolio' ); ?>">
+      <?php
+      wp_nav_menu(
+        array(
+          'theme_location' => 'primary',
+          'menu_id'        => 'menu-primary',
+          'menu_class'     => 'nav-links-list',
+          'container'      => false,
+          'depth'          => 2,
+          'fallback_cb'    => 'personal_portfolio_primary_menu_fallback',
+        )
+      );
+      ?>
     </nav>
     <div class="header-right d-flex align-items-center gap-4">
       <div class="socials d-flex gap-3">

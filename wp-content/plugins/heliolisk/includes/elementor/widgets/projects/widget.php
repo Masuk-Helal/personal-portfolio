@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
+use Elementor\Group_Control_Typography;
 
 class Heliolisk_Projects_Widget extends Widget_Base {
 
@@ -50,6 +51,7 @@ class Heliolisk_Projects_Widget extends Widget_Base {
 		$this->register_content_advanced_controls();
 
 		$this->register_style_eyebrow_controls();
+		$this->register_style_selected_controls();
 		$this->register_style_skills_controls();
 		$this->register_style_card_controls();
 		$this->register_style_grid_controls();
@@ -106,16 +108,29 @@ class Heliolisk_Projects_Widget extends Widget_Base {
 				'options' => array(
 					'featured' => __( 'Layout 1 — Featured Cards', 'heliolisk' ),
 					'grid'     => __( 'Layout 2 — Image Grid', 'heliolisk' ),
+					'selected' => __( 'Layout 3 — Selected Work', 'heliolisk' ),
 				),
+			)
+		);
+
+		$this->add_control(
+			'heading',
+			array(
+				'label'     => __( 'Heading', 'heliolisk' ),
+				'type'      => Controls_Manager::TEXTAREA,
+				'rows'      => 2,
+				'default'   => __( 'Systems, dashboards and digital projects.', 'heliolisk' ),
+				'condition' => array( 'layout' => 'selected' ),
 			)
 		);
 
 		$this->add_control(
 			'lead_text',
 			array(
-				'label'   => __( 'Lead Text', 'heliolisk' ),
-				'type'    => Controls_Manager::TEXTAREA,
-				'default' => __( "Academic & practical analytics experience. As a Business Analytics student, I've applied R, Python and SQL to real survey data — cleaning, modelling, testing and visualizing it to turn raw numbers into readable, defensible insights.", 'heliolisk' ),
+				'label'     => __( 'Lead Text', 'heliolisk' ),
+				'type'      => Controls_Manager::TEXTAREA,
+				'default'   => __( "Academic & practical analytics experience. As a Business Analytics student, I've applied R, Python and SQL to real survey data — cleaning, modelling, testing and visualizing it to turn raw numbers into readable, defensible insights.", 'heliolisk' ),
+				'condition' => array( 'layout!' => 'selected' ),
 			)
 		);
 
@@ -126,8 +141,9 @@ class Heliolisk_Projects_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_skills',
 			array(
-				'label' => __( 'Skill Tags', 'heliolisk' ),
-				'tab'   => Controls_Manager::TAB_CONTENT,
+				'label'     => __( 'Skill Tags', 'heliolisk' ),
+				'tab'       => Controls_Manager::TAB_CONTENT,
+				'condition' => array( 'layout!' => 'selected' ),
 			)
 		);
 
@@ -255,7 +271,7 @@ class Heliolisk_Projects_Widget extends Widget_Base {
 				'type'      => Controls_Manager::TEXT,
 				'default'   => __( 'Project', 'heliolisk' ),
 				'description' => __( 'Shown above each card as "Project 01", "Project 02"...', 'heliolisk' ),
-				'condition' => array( 'layout' => 'grid' ),
+				'condition' => array( 'layout' => array( 'grid', 'selected' ) ),
 			)
 		);
 
@@ -266,7 +282,7 @@ class Heliolisk_Projects_Widget extends Widget_Base {
 				'type'        => Controls_Manager::MEDIA,
 				'default'     => array( 'url' => '' ),
 				'description' => __( 'Used for projects that have no featured image.', 'heliolisk' ),
-				'condition'   => array( 'layout' => 'grid' ),
+				'condition'   => array( 'layout' => array( 'grid', 'selected' ) ),
 			)
 		);
 
@@ -360,6 +376,101 @@ class Heliolisk_Projects_Widget extends Widget_Base {
 				'separator' => 'before',
 				'selectors' => array(
 					'{{WRAPPER}} .hlw-projects__lead' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->end_controls_section();
+	}
+
+	private function register_style_selected_controls() {
+		$this->start_controls_section(
+			'section_style_selected',
+			array(
+				'label'     => __( 'Selected Work', 'heliolisk' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+				'condition' => array( 'layout' => 'selected' ),
+			)
+		);
+
+		$this->add_control(
+			'selected_heading_color',
+			array(
+				'label'     => __( 'Heading Color', 'heliolisk' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#f4f5fb',
+				'selectors' => array(
+					'{{WRAPPER}} .hlw-projects__heading' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'selected_heading_typography',
+				'selector' => '{{WRAPPER}} .hlw-projects__heading',
+			)
+		);
+
+		$this->add_control(
+			'selected_card_bg',
+			array(
+				'label'     => __( 'Card Background', 'heliolisk' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#080808',
+				'separator' => 'before',
+				'selectors' => array(
+					'{{WRAPPER}} .hlw-projects__sw-card' => 'background-color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'selected_card_hover_bg',
+			array(
+				'label'     => __( 'Card Hover Background', 'heliolisk' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#101010',
+				'selectors' => array(
+					'{{WRAPPER}} .hlw-projects__sw-card:hover' => 'background-color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'selected_divider_color',
+			array(
+				'label'     => __( 'Divider Color', 'heliolisk' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#242438',
+				'selectors' => array(
+					'{{WRAPPER}} .hlw-projects__sw-grid' => 'background-color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'selected_num_color',
+			array(
+				'label'     => __( 'Number Color', 'heliolisk' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#8a8a8a',
+				'selectors' => array(
+					'{{WRAPPER}} .hlw-projects__sw-num' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'selected_accent_color',
+			array(
+				'label'       => __( 'Hover Accent Color', 'heliolisk' ),
+				'type'        => Controls_Manager::COLOR,
+				'default'     => '#a78bfa',
+				'description' => __( 'Link and tag color on hover.', 'heliolisk' ),
+				'selectors'   => array(
+					'{{WRAPPER}} .hlw-projects__sw-link:hover, {{WRAPPER}} .hlw-projects__sw-tag:hover' => 'color: {{VALUE}}; border-color: {{VALUE}};',
 				),
 			)
 		);
@@ -582,9 +693,10 @@ class Heliolisk_Projects_Widget extends Widget_Base {
 
 	/* ==================== RENDER ==================== */
 
-	protected function render() {
-		$settings = $this->get_settings_for_display();
-
+	/**
+	 * The "Project" post query shared by every layout.
+	 */
+	private function get_projects_query( $settings ) {
 		$query_args = array(
 			'post_type'           => 'hl_project',
 			'post_status'         => 'publish',
@@ -604,7 +716,18 @@ class Heliolisk_Projects_Widget extends Widget_Base {
 			);
 		}
 
-		$projects_query    = new \WP_Query( $query_args );
+		return new \WP_Query( $query_args );
+	}
+
+	protected function render() {
+		$settings = $this->get_settings_for_display();
+
+		if ( 'selected' === $settings['layout'] ) {
+			$this->render_selected_work( $settings );
+			return;
+		}
+
+		$projects_query    = $this->get_projects_query( $settings );
 		$excerpt_length    = ! empty( $settings['excerpt_length'] ) ? (int) $settings['excerpt_length'] : 50;
 		$category_fallback = ! empty( $settings['category_fallback'] ) ? $settings['category_fallback'] : __( 'Project', 'heliolisk' );
 		$number_prefix     = ! empty( $settings['number_prefix'] ) ? $settings['number_prefix'] : __( 'Project', 'heliolisk' );
@@ -717,6 +840,92 @@ class Heliolisk_Projects_Widget extends Widget_Base {
 				<?php endif; ?>
 
 			</div>
+		</section>
+		<?php
+	}
+
+	/**
+	 * Layout 3 — "Selected Work": Project posts in a full-bleed,
+	 * hairline-divided grid under a section heading. Each card links to the
+	 * project's own single page (the theme's single-hl_project.php).
+	 */
+	private function render_selected_work( $settings ) {
+		$projects_query = $this->get_projects_query( $settings );
+		$excerpt_length = ! empty( $settings['excerpt_length'] ) ? (int) $settings['excerpt_length'] : 50;
+		$number_prefix  = ! empty( $settings['number_prefix'] ) ? $settings['number_prefix'] : '';
+		$fallback_image = ! empty( $settings['fallback_image']['url'] ) ? $settings['fallback_image']['url'] : '';
+		$arrow_icon     = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hlw-projects__sw-link-icon"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+		?>
+		<section class="hlw-projects hlw-projects--selected"<?php echo ! empty( $settings['section_id'] ) ? ' id="' . esc_attr( $settings['section_id'] ) . '"' : ''; ?>>
+			<div class="hlw-projects__inner">
+
+				<?php if ( 'yes' === $settings['show_eyebrow'] && ! empty( $settings['eyebrow_label'] ) ) : ?>
+					<div class="hlw-projects__eyebrow">
+						<?php if ( ! empty( $settings['eyebrow_number'] ) ) : ?>
+							<span class="hlw-projects__eyebrow-num"><?php echo esc_html( $settings['eyebrow_number'] ); ?></span>
+						<?php endif; ?>
+						<span class="hlw-projects__eyebrow-lbl"><?php echo esc_html( $settings['eyebrow_label'] ); ?></span>
+						<span class="hlw-projects__eyebrow-line"></span>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( ! empty( $settings['heading'] ) ) : ?>
+					<h2 class="hlw-projects__heading"><?php echo esc_html( $settings['heading'] ); ?></h2>
+				<?php endif; ?>
+
+				<?php if ( ! $projects_query->have_posts() ) : ?>
+					<p class="hlw-projects__empty"><?php esc_html_e( 'No projects published yet.', 'heliolisk' ); ?></p>
+				<?php endif; ?>
+
+			</div>
+
+			<?php if ( $projects_query->have_posts() ) : ?>
+				<div class="hlw-projects__sw-grid">
+					<?php
+					$i = 0;
+					while ( $projects_query->have_posts() ) :
+						$projects_query->the_post();
+						$i++;
+						$tags = get_the_tags();
+						?>
+						<div class="hlw-projects__sw-card">
+							<?php if ( has_post_thumbnail() || $fallback_image ) : ?>
+								<a href="<?php the_permalink(); ?>" class="hlw-projects__sw-preview" tabindex="-1" aria-hidden="true">
+									<?php if ( has_post_thumbnail() ) : ?>
+										<?php the_post_thumbnail( 'large' ); ?>
+									<?php else : ?>
+										<img src="<?php echo esc_url( $fallback_image ); ?>" alt="">
+									<?php endif; ?>
+								</a>
+							<?php endif; ?>
+
+							<?php if ( $number_prefix ) : ?>
+								<p class="hlw-projects__sw-num"><?php echo esc_html( $number_prefix . ' ' . sprintf( '%02d', $i ) ); ?></p>
+							<?php endif; ?>
+
+							<h3 class="hlw-projects__sw-title"><?php the_title(); ?></h3>
+
+							<p class="hlw-projects__sw-desc"><?php echo esc_html( wp_trim_words( get_the_excerpt(), $excerpt_length ) ); ?></p>
+
+							<?php if ( $tags ) : ?>
+								<div class="hlw-projects__sw-tags">
+									<?php foreach ( $tags as $tag ) : ?>
+										<span class="hlw-projects__sw-tag"><?php echo esc_html( $tag->name ); ?></span>
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
+
+							<?php if ( ! empty( $settings['view_button_text'] ) ) : ?>
+								<a href="<?php the_permalink(); ?>" class="hlw-projects__sw-link">
+									<?php echo esc_html( $settings['view_button_text'] ); ?>
+									<?php echo $arrow_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								</a>
+							<?php endif; ?>
+						</div>
+					<?php endwhile; ?>
+				</div>
+				<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
 		</section>
 		<?php
 	}

@@ -1,6 +1,6 @@
 
 <?php
-$personal_portfolio_footer_template_id = (int) get_theme_mod( 'footer_template_id', 0 );
+$personal_portfolio_footer_template_id = personal_portfolio_get_footer_template_id();
 $personal_portfolio_custom_footer_html = '';
 
 if ( $personal_portfolio_footer_template_id && class_exists( '\Elementor\Plugin' ) ) {
