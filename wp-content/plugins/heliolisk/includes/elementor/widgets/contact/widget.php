@@ -30,7 +30,7 @@ class Heliolisk_Contact_Widget extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return array( 'personal-portfolio' );
+		return array( 'heliolisk' );
 	}
 
 	public function get_keywords() {
@@ -119,7 +119,7 @@ class Heliolisk_Contact_Widget extends Widget_Base {
 				'label'         => __( 'Button Link', 'heliolisk' ),
 				'type'          => Controls_Manager::URL,
 				'default'       => array(
-					'url'         => 'https://wa.me/qr/RJZE2HJUFJSZD1',
+					'url'         => 'https://wa.me/1234567890',
 					'is_external' => true,
 					'nofollow'    => false,
 				),
@@ -178,28 +178,28 @@ class Heliolisk_Contact_Widget extends Widget_Base {
 				'fields'      => $repeater->get_controls(),
 				'default'     => array(
 					array(
-						'text' => __( 'refatshanto94@gmail.com', 'heliolisk' ),
-						'link' => array( 'url' => 'mailto:refatshanto94@gmail.com' ),
+						'text' => __( 'hello@example.com', 'heliolisk' ),
+						'link' => array( 'url' => 'mailto:hello@example.com' ),
 					),
 					array(
-						'text' => __( '+880 1984-617471', 'heliolisk' ),
-						'link' => array( 'url' => 'tel:+8801984617471' ),
+						'text' => __( '+1 234 567 890', 'heliolisk' ),
+						'link' => array( 'url' => 'tel:+1234567890' ),
 					),
 					array(
 						'text' => __( 'WhatsApp', 'heliolisk' ),
-						'link' => array( 'url' => 'https://wa.me/qr/RJZE2HJUFJSZD1', 'is_external' => true ),
+						'link' => array( 'url' => 'https://wa.me/1234567890', 'is_external' => true ),
 					),
 					array(
-						'text' => __( 'linkedin.com/in/shantoszz', 'heliolisk' ),
-						'link' => array( 'url' => 'https://www.linkedin.com/in/shantoszz', 'is_external' => true ),
+						'text' => __( 'linkedin.com/in/yourname', 'heliolisk' ),
+						'link' => array( 'url' => 'https://www.linkedin.com/in/yourname', 'is_external' => true ),
 					),
 					array(
-						'text' => __( 'facebook.com/shantoszz', 'heliolisk' ),
-						'link' => array( 'url' => 'https://www.facebook.com/shantoszz/', 'is_external' => true ),
+						'text' => __( 'facebook.com/yourname', 'heliolisk' ),
+						'link' => array( 'url' => 'https://www.facebook.com/yourname/', 'is_external' => true ),
 					),
 					array(
-						'text' => __( 'github.com/Shantoszz', 'heliolisk' ),
-						'link' => array( 'url' => 'https://github.com/Shantoszz', 'is_external' => true ),
+						'text' => __( 'github.com/yourname', 'heliolisk' ),
+						'link' => array( 'url' => 'https://github.com/yourname', 'is_external' => true ),
 					),
 				),
 				'title_field' => '{{{ text }}}',

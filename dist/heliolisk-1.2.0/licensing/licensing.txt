@@ -1,0 +1,109 @@
+HELIOLISK - LICENSING AND CREDITS
+Version 1.2.0 - 11 October 2026
+
+================================================================================
+1. HELIOLISK CODE
+================================================================================
+
+The Heliolisk theme (theme/heliolisk.zip) and the Heliolisk companion plugin
+(plugins/heliolisk-core.zip) are original work, Copyright (c) 2026 Heliolisk,
+released under the GNU General Public License v2 or later:
+https://www.gnu.org/licenses/gpl-2.0.html
+
+This covers every PHP, CSS and JavaScript file written for the product (all of
+theme/inc, theme/template-parts, theme/assets/css, theme/assets/js and
+plugin/includes), the original SVG artwork (theme/assets/images/blog/arrow-dark.svg
+and plugin widget icons hero-icon.svg), the translation template and the
+documentation.
+
+================================================================================
+2. THIRD-PARTY CODE INCLUDED IN THE THEME
+================================================================================
+
+Bootstrap 5.3.3
+  Copyright 2011-2024 The Bootstrap Authors. MIT License.
+  https://getbootstrap.com/  -  https://github.com/twbs/bootstrap/blob/main/LICENSE
+  Files: theme/assets/vendor/bootstrap/
+
+GSAP 3.13.0 and ScrollTrigger 3.13.0
+  Copyright 2025 GreenSock / Webflow. GSAP Standard License ("no charge",
+  commercial use permitted; not GPL).
+  https://gsap.com/standard-license
+  Files: theme/assets/vendor/gsap/
+
+jQuery Nice Select 1.0
+  Copyright Hernan Sartorio. MIT License.
+  https://github.com/hernansartorio/jquery-nice-select
+  Files: theme/assets/vendor/nice-select/
+
+TGM Plugin Activation 2.6.1
+  Copyright 2011 Thomas Griffin. GPL v2 or later.
+  http://tgmpluginactivation.com/
+  File: theme/inc/class-tgm-plugin-activation.php
+
+Feather icons (path data of some inline SVG icons)
+  Copyright Cole Bemis. MIT License.
+  https://feathericons.com/
+  File: theme/inc/icons.php
+
+================================================================================
+3. THIRD-PARTY PLUGINS
+================================================================================
+
+Codestar Framework 2.3.1 (bundled as theme/plugins/codestar-framework.zip)
+  Copyright 2015-2022 Codestar. GPL v2.
+  https://codestarframework.com/
+
+Installed from wordpress.org by the theme's plugin installer (not bundled):
+  Elementor (GPL v3), CMB2 (GPL v2), Classic Editor (GPL v2), Classic Widgets
+  (GPL v2), Pure Metafields, Customizer Export/Import, Widget Importer &
+  Exporter, WordPress Importer. Each is licensed by its own author.
+
+================================================================================
+4. FONTS
+================================================================================
+
+Space Grotesk, Inter and Barlow Condensed are loaded from Google Fonts
+(fonts.googleapis.com). All three are licensed under the SIL Open Font License
+1.1: https://openfontlicense.org/ - the theme does not ship the font files.
+
+================================================================================
+5. IMAGES
+================================================================================
+
+The theme itself contains no photographs. Image files in the download:
+
+Theme
+  assets/images/blog/arrow-dark.svg       Original artwork by Heliolisk (GPL v2+).
+
+Companion plugin
+  includes/elementor/widgets/*/assets/images/hero-icon.svg
+                                          Original artwork by Heliolisk (GPL v2+).
+  demo-media/                             Images used only by the demo import:
+    image24.png, image25.png, image26.png, image27.png, image28.png,
+    image29.jpg, image30.webp, image31.jpg
+                                          Neutral "Brand One" ... "Brand Eight"
+                                          placeholder wordmarks generated for
+                                          this product (GPL v2+).
+    hero-portrait.jpg, about-photo.jpg    Portrait photographs of the demo
+                                          persona.
+    image7.jpg, image18.jpg, image20.jpg, image21.jpg, image22.jpg, image23.jpg
+                                          Demo post and project images.
+
+  [AUTHOR TO COMPLETE BEFORE SUBMISSION] For every file in the last two groups
+  above, state the source and license (for example "own photograph", or the
+  stock site and its license URL) and confirm that the people shown agreed to
+  their use. Envato requires every image in the preview and the demo content to
+  be licensed for redistribution or to be removed from the download.
+
+Documentation and preview images (documentation/assets/img, item preview
+screenshots) are screenshots of the demo above and share its licenses.
+
+================================================================================
+6. TRADEMARKS
+================================================================================
+
+No third-party logos or brand names are used as product content. Where the
+documentation or screenshots mention WordPress, Elementor, Google Fonts or
+Envato, those names belong to their owners and are used only to describe
+compatibility.

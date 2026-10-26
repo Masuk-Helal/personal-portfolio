@@ -33,7 +33,7 @@ class Heliolisk_Projects_Widget extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return array( 'personal-portfolio' );
+		return array( 'heliolisk' );
 	}
 
 	public function get_keywords() {
@@ -129,7 +129,7 @@ class Heliolisk_Projects_Widget extends Widget_Base {
 			array(
 				'label'     => __( 'Lead Text', 'heliolisk' ),
 				'type'      => Controls_Manager::TEXTAREA,
-				'default'   => __( "Academic & practical analytics experience. As a Business Analytics student, I've applied R, Python and SQL to real survey data — cleaning, modelling, testing and visualizing it to turn raw numbers into readable, defensible insights.", 'heliolisk' ),
+				'default'   => __( "Selected analytics and operations work. I apply R, Python and SQL to real data — cleaning, modelling, testing and visualizing it to turn raw numbers into readable, defensible insights.", 'heliolisk' ),
 				'condition' => array( 'layout!' => 'selected' ),
 			)
 		);

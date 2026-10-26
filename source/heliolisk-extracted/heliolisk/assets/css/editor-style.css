@@ -1,0 +1,46 @@
+/*
+ * Heliolisk — block editor styles.
+ * Mirrors the front end: Inter body text, Space Grotesk headings, the theme's
+ * content width (820px) and wide width (1140px). Light scheme by default;
+ * inc/setup.php overrides the --hl-* tokens for the dark scheme.
+ */
+
+.editor-styles-wrapper{
+  --hl-bg:#ffffff;
+  --hl-text:#111111;
+  --hl-text-mut:#555555;
+  --hl-border:#e6e6e6;
+
+  background:var(--hl-bg);
+  color:var(--hl-text-mut);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:1.02rem;
+  line-height:1.85;
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6,
+.editor-styles-wrapper .editor-post-title__input{
+  color:var(--hl-text);
+  font-family:'Space Grotesk','Inter',sans-serif;
+  line-height:1.2;
+}
+
+.editor-styles-wrapper a{ color:var(--hl-text); }
+.editor-styles-wrapper blockquote{ border-left:3px solid var(--hl-border); padding-left:1.2em; }
+.editor-styles-wrapper hr{ border-color:var(--hl-border); }
+
+.editor-styles-wrapper .wp-block{ max-width:820px; }
+.editor-styles-wrapper .wp-block[data-align="wide"]{ max-width:1140px; }
+.editor-styles-wrapper .wp-block[data-align="full"]{ max-width:none; }
+
+.editor-styles-wrapper .wp-block-quote.is-style-heliolisk-accent{
+  border-left:4px solid var(--hl-border);
+  padding:20px 28px;
+  text-align:left;
+  background:transparent;
+}

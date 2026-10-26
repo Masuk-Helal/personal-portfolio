@@ -1,0 +1,151 @@
+/* Heliolisk About widget — fully self-contained, no theme dependency. */
+
+.hlw-about,
+.hlw-about *,
+.hlw-about *::before,
+.hlw-about *::after {
+	box-sizing: border-box;
+}
+
+.hlw-about {
+	background-color: #080808;
+	color: #f4f5fb;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	padding: 96px 24px;
+}
+
+.hlw-about__inner {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	gap: 64px;
+}
+
+.hlw-about__photo {
+	width: 40%;
+	flex-shrink: 0;
+}
+
+.hlw-about__photo img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+.hlw-about__text {
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.hlw-about__kicker {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: #a78bfa;
+}
+
+.hlw-about__kicker-bar {
+	display: inline-block;
+	width: 24px;
+	height: 2px;
+	background-color: #8b5cf6;
+	flex-shrink: 0;
+}
+
+.hlw-about__heading {
+	margin: 0;
+	font-family: 'Space Grotesk', 'Inter', sans-serif;
+	font-weight: 700;
+	line-height: 1.3;
+	font-size: clamp(1.6rem, 3vw, 2.2rem);
+	color: #f4f5fb;
+}
+
+.hlw-about__desc {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.7;
+	color: #a9a9b8;
+}
+
+.hlw-about__info-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 16px 24px;
+	padding-top: 16px;
+	margin: 8px 0;
+}
+
+.hlw-about__info-item {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding-top: 16px;
+	border-top: 1px solid rgba(244, 245, 251, 0.12);
+}
+
+.hlw-about__info-label {
+	font-size: 12px;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: #8a8a8a;
+}
+
+.hlw-about__info-value {
+	font-size: 15px;
+	font-weight: 600;
+	color: #f4f5fb;
+}
+
+.hlw-about__btn {
+	display: inline-flex;
+	align-items: center;
+	align-self: flex-start;
+	gap: 10px;
+	margin-top: 8px;
+	padding: 14px 26px;
+	border-radius: 999px;
+	background-color: #a78bfa;
+	color: #080808;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	text-decoration: none;
+	transition: background-color 0.2s ease;
+}
+
+.hlw-about__btn:hover {
+	background-color: #8b5cf6;
+}
+
+.hlw-about__btn-icon {
+	width: 16px;
+	height: 16px;
+	flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+	.hlw-about__inner {
+		flex-direction: column;
+		gap: 32px;
+	}
+
+	.hlw-about__photo,
+	.hlw-about__text {
+		width: 100%;
+	}
+
+	.hlw-about__info-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

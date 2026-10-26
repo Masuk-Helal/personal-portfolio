@@ -30,7 +30,7 @@ class Heliolisk_Footer_Widget extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return array( 'personal-portfolio' );
+		return array( 'heliolisk' );
 	}
 
 	public function get_keywords() {
@@ -68,7 +68,7 @@ class Heliolisk_Footer_Widget extends Widget_Base {
 			array(
 				'label'   => __( 'Name', 'heliolisk' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'S.M. Refat Arefin', 'heliolisk' ),
+				'default' => __( 'Your Name', 'heliolisk' ),
 			)
 		);
 
@@ -77,7 +77,7 @@ class Heliolisk_Footer_Widget extends Widget_Base {
 			array(
 				'label'   => __( 'Tagline', 'heliolisk' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Business Analytics · Operations · Technology · Marketing', 'heliolisk' ),
+				'default' => __( 'Analytics · Operations · Technology · Marketing', 'heliolisk' ),
 			)
 		);
 
@@ -123,15 +123,15 @@ class Heliolisk_Footer_Widget extends Widget_Base {
 				'default'     => array(
 					array(
 						'text' => __( 'LinkedIn', 'heliolisk' ),
-						'link' => array( 'url' => 'https://www.linkedin.com/in/shantoszz', 'is_external' => true ),
+						'link' => array( 'url' => 'https://www.linkedin.com/in/yourname', 'is_external' => true ),
 					),
 					array(
 						'text' => __( 'GitHub', 'heliolisk' ),
-						'link' => array( 'url' => 'https://github.com/Shantoszz', 'is_external' => true ),
+						'link' => array( 'url' => 'https://github.com/yourname', 'is_external' => true ),
 					),
 					array(
 						'text' => __( 'Email', 'heliolisk' ),
-						'link' => array( 'url' => 'mailto:refatshanto94@gmail.com' ),
+						'link' => array( 'url' => 'mailto:hello@example.com' ),
 					),
 				),
 				'title_field' => '{{{ text }}}',
@@ -155,7 +155,7 @@ class Heliolisk_Footer_Widget extends Widget_Base {
 			array(
 				'label'   => __( 'Copyright Text', 'heliolisk' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( '© 2026 S.M. Refat Arefin. All rights reserved.', 'heliolisk' ),
+				'default' => __( '© 2026 Your Name. All rights reserved.', 'heliolisk' ),
 			)
 		);
 
@@ -164,7 +164,7 @@ class Heliolisk_Footer_Widget extends Widget_Base {
 			array(
 				'label'   => __( 'Location Text', 'heliolisk' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Dhaka, Bangladesh', 'heliolisk' ),
+				'default' => __( 'City, Country', 'heliolisk' ),
 			)
 		);
 

@@ -30,7 +30,7 @@ class Heliolisk_Numbers_Widget extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return array( 'personal-portfolio' );
+		return array( 'heliolisk' );
 	}
 
 	public function get_keywords() {
@@ -112,7 +112,7 @@ class Heliolisk_Numbers_Widget extends Widget_Base {
 			array(
 				'label'   => __( 'Value', 'heliolisk' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( '3.6+', 'heliolisk' ),
+				'default' => __( '5+', 'heliolisk' ),
 			)
 		);
 
@@ -133,12 +133,12 @@ class Heliolisk_Numbers_Widget extends Widget_Base {
 				'fields'      => $repeater->get_controls(),
 				'default'     => array(
 					array(
-						'value' => '3.6+',
+						'value' => '5+',
 						'label' => __( 'Years Professional Experience', 'heliolisk' ),
 					),
 					array(
-						'value' => 'BBA',
-						'label' => __( 'Business Analytics', 'heliolisk' ),
+						'value' => '12+',
+						'label' => __( 'Projects Delivered', 'heliolisk' ),
 					),
 					array(
 						'value' => '05',

@@ -1,0 +1,121 @@
+/* Heliolisk Blog widget — self-contained layout/CSS (post data itself comes
+   from this WordPress site's own post query, so this is the one widget in
+   the set that isn't usable outside a WordPress install). */
+
+.hlw-blog,
+.hlw-blog *,
+.hlw-blog *::before,
+.hlw-blog *::after {
+	box-sizing: border-box;
+}
+
+.hlw-blog {
+	background-color: #080808;
+	color: #f4f5fb;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	padding: 96px 24px;
+}
+
+.hlw-blog__inner {
+	margin: 0 auto;
+}
+
+.hlw-blog__eyebrow {
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+	margin-bottom: 40px;
+}
+
+.hlw-blog__eyebrow-num {
+	font-weight: 600;
+	color: #8b5cf6;
+	font-size: 18px;
+}
+
+.hlw-blog__eyebrow-lbl {
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.16em;
+	font-size: 17px;
+	color: #a9a9b8;
+}
+
+.hlw-blog__eyebrow-line {
+	flex: 1;
+	height: 1px;
+	background: #242438;
+	margin-left: 6px;
+}
+
+.hlw-blog__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 2px;
+	background: #242438;
+}
+
+.hlw-blog__card {
+	display: block;
+	background: #080808;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+
+.hlw-blog__card:hover {
+	background: #101010;
+}
+
+.hlw-blog__card-img {
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	background: #101010;
+}
+
+.hlw-blog__card-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	filter: grayscale(0.1) contrast(1.05);
+	transition: transform 0.5s ease;
+}
+
+.hlw-blog__card:hover .hlw-blog__card-img img {
+	transform: scale(1.05);
+}
+
+.hlw-blog__card-text {
+	padding: 26px 30px 30px;
+}
+
+.hlw-blog__card-title {
+	margin: 0 0 10px;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #f4f5fb;
+	transition: color 0.2s ease;
+}
+
+.hlw-blog__card-excerpt {
+	margin: 0;
+	font-size: 14.5px;
+	line-height: 1.6;
+	color: #a9a9b8;
+}
+
+.hlw-blog__empty {
+	color: #a9a9b8;
+	font-size: 14px;
+}
+
+@media (max-width: 600px) {
+	.hlw-blog {
+		padding: 64px 18px;
+	}
+
+	.hlw-blog__card-text {
+		padding: 20px 22px 24px;
+	}
+}

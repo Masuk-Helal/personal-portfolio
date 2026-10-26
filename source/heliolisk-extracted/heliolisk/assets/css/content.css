@@ -1,0 +1,308 @@
+/*
+ * Heliolisk — WordPress core content styles.
+ *
+ * Styles for the classes WordPress itself prints (alignment, captions,
+ * galleries, sticky posts, password form, calendar, core blocks). Everything
+ * is written against the theme tokens from style.css, so it follows the Dark
+ * and Light schemes. Typography inside .entry-content lives in blog.css.
+ */
+
+body {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* ---- Alignment helpers (WordPress core classes) ---- */
+.alignleft {
+	float: left;
+	margin: 6px 24px 16px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 6px 0 16px 24px;
+}
+
+.aligncenter {
+	display: block;
+	clear: both;
+	margin-inline: auto;
+	text-align: center;
+}
+
+.wp-block-image .alignleft,
+.wp-block-image .alignright {
+	max-width: 100%;
+}
+
+/* ---- Captions ---- */
+.wp-caption {
+	max-width: 100%;
+	margin-bottom: 24px;
+}
+
+.wp-caption img {
+	display: block;
+	margin-inline: auto;
+}
+
+.wp-caption .wp-caption-text,
+.gallery-caption {
+	margin: 10px 0 0;
+	font-size: .8rem;
+	line-height: 1.5;
+	color: var(--text-faint);
+	text-align: center;
+}
+
+/* ---- Classic gallery ---- */
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(var(--gallery-cols, 3), minmax(0, 1fr));
+	gap: 16px;
+	margin: 0 0 28px;
+}
+
+.gallery-columns-1 { --gallery-cols: 1; }
+.gallery-columns-2 { --gallery-cols: 2; }
+.gallery-columns-4 { --gallery-cols: 4; }
+.gallery-columns-5 { --gallery-cols: 5; }
+.gallery-columns-6 { --gallery-cols: 6; }
+.gallery-columns-7 { --gallery-cols: 7; }
+.gallery-columns-8 { --gallery-cols: 8; }
+.gallery-columns-9 { --gallery-cols: 9; }
+
+.gallery-item {
+	margin: 0;
+	text-align: center;
+}
+
+.gallery-item img {
+	width: 100%;
+	border-radius: var(--r);
+}
+
+@media (max-width: 575px) {
+	.gallery {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+/* ---- Sticky posts and post authors ---- */
+.sticky.post-card {
+	position: relative;
+}
+
+.sticky.post-card::before {
+	content: "";
+	position: absolute;
+	inset: 0 0 auto 0;
+	height: 3px;
+	background: var(--red);
+	border-radius: var(--r) var(--r) 0 0;
+	z-index: 1;
+}
+
+.bypostauthor > .comment-card .comment-author-name {
+	color: var(--red-bright);
+}
+
+/* ---- Screen reader text ---- */
+.screen-reader-text:focus {
+	position: fixed;
+	top: 8px;
+	left: 8px;
+	z-index: 100000;
+	width: auto;
+	height: auto;
+	clip: auto;
+	clip-path: none;
+	padding: 12px 20px;
+	background: var(--bg);
+	color: var(--text);
+	border: 1px solid var(--border);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, .25);
+	text-decoration: none;
+}
+
+/* ---- Password-protected posts ---- */
+.post-password-form {
+	max-width: 520px;
+}
+
+.post-password-form label {
+	display: block;
+	margin-bottom: 8px;
+	color: var(--text);
+	font-weight: 500;
+}
+
+.post-password-form input[type="password"] {
+	width: 100%;
+	padding: 12px 16px;
+	margin-top: 6px;
+	background: transparent;
+	color: var(--text);
+	border: 1px solid var(--border);
+	border-radius: var(--r);
+}
+
+.post-password-form input[type="password"]:focus {
+	outline: 2px solid var(--red);
+	outline-offset: 1px;
+}
+
+.post-password-form input[type="submit"] {
+	margin-top: 12px;
+	padding: 12px 24px;
+	background: var(--red);
+	color: #fff;
+	border: 0;
+	border-radius: var(--r);
+	cursor: pointer;
+}
+
+.post-password-form input[type="submit"]:hover {
+	background: var(--red-bright);
+}
+
+/* ---- Core blocks that need a little help ---- */
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background: rgba(127, 127, 127, .08);
+}
+
+.wp-block-table figcaption,
+.wp-block-image figcaption {
+	margin-top: 10px;
+	font-size: .8rem;
+	color: var(--text-faint);
+	text-align: center;
+}
+
+.wp-block-separator,
+.entry-content hr {
+	border: 0;
+	border-top: 1px solid var(--border);
+	opacity: 1;
+	margin: 36px 0;
+}
+
+.wp-block-preformatted,
+.entry-content pre {
+	overflow-x: auto;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.wp-block-search__inside-wrapper {
+	display: flex;
+	gap: 8px;
+}
+
+.wp-block-search__input {
+	flex: 1;
+	min-width: 0;
+	padding: 10px 14px;
+	background: transparent;
+	color: var(--text);
+	border: 1px solid var(--border);
+	border-radius: var(--r);
+}
+
+.wp-block-search__input:focus {
+	outline: 2px solid var(--red);
+	outline-offset: 1px;
+}
+
+.wp-block-search__button {
+	padding: 10px 18px;
+	background: var(--red);
+	color: #fff;
+	border: 0;
+	border-radius: var(--r);
+	cursor: pointer;
+}
+
+.wp-block-search__button:hover {
+	background: var(--red-bright);
+}
+
+/* ---- Calendar (widget and block) ---- */
+#wp-calendar,
+.wp-calendar-table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+#wp-calendar caption,
+.wp-calendar-table caption {
+	padding-bottom: 10px;
+	color: var(--text);
+	font-weight: 600;
+	text-align: left;
+}
+
+#wp-calendar th,
+#wp-calendar td,
+.wp-calendar-table th,
+.wp-calendar-table td {
+	padding: 6px 2px;
+}
+
+#wp-calendar tbody td a {
+	font-weight: 600;
+	color: var(--red-bright);
+}
+
+#wp-calendar tbody td#today {
+	color: var(--text);
+	font-weight: 700;
+}
+
+.wp-calendar-nav {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 8px;
+	font-size: .85rem;
+}
+
+/* ---- Paginated posts <!--nextpage--> ---- */
+.page-links {
+	clear: both;
+}
+
+/* Keeps the current page marker readable in both color schemes. */
+.page-links > span.current,
+.page-links > .post-page-numbers.current {
+	border-color: var(--text);
+	color: var(--text);
+	font-weight: 600;
+}
+
+/* ---- Sidebar widget lists ---- */
+.hl-sidebar-widget ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.hl-sidebar-widget li {
+	margin-bottom: 10px;
+}
+
+.hl-sidebar-widget li a {
+	font-size: .92rem;
+	font-weight: 400;
+	line-height: 1.6;
+}
+
+.hl-sidebar-widget ul ul {
+	margin-top: 8px;
+	padding-left: 16px;
+}

@@ -30,7 +30,7 @@ class Heliolisk_About_Widget extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return array( 'personal-portfolio' );
+		return array( 'heliolisk' );
 	}
 
 	public function get_keywords() {
@@ -92,7 +92,7 @@ class Heliolisk_About_Widget extends Widget_Base {
 			array(
 				'label'   => __( 'Heading', 'heliolisk' ),
 				'type'    => Controls_Manager::TEXTAREA,
-				'default' => __( "I'm S.M. Refat Arefin, a Business Analytics student and Operations professional.", 'heliolisk' ),
+				'default' => __( "I'm Your Name, an analyst and operations professional.", 'heliolisk' ),
 			)
 		);
 
@@ -167,19 +167,19 @@ class Heliolisk_About_Widget extends Widget_Base {
 				'default'     => array(
 					array(
 						'label' => __( 'Name', 'heliolisk' ),
-						'value' => __( 'S.M. Refat Arefin', 'heliolisk' ),
+						'value' => __( 'Your Name', 'heliolisk' ),
 					),
 					array(
 						'label' => __( 'From', 'heliolisk' ),
-						'value' => __( 'Dhaka, Bangladesh', 'heliolisk' ),
+						'value' => __( 'City, Country', 'heliolisk' ),
 					),
 					array(
 						'label' => __( 'Study', 'heliolisk' ),
-						'value' => __( 'Business Analytics (BBA)', 'heliolisk' ),
+						'value' => __( 'Business Analytics', 'heliolisk' ),
 					),
 					array(
 						'label' => __( 'Email', 'heliolisk' ),
-						'value' => __( 'refatshanto94@gmail.com', 'heliolisk' ),
+						'value' => __( 'hello@example.com', 'heliolisk' ),
 					),
 				),
 				'title_field' => '{{{ label }}}: {{{ value }}}',

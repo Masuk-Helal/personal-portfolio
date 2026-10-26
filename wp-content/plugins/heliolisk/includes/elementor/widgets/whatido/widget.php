@@ -36,7 +36,7 @@ class Heliolisk_Whatido_Widget extends Widget_Base
 
 	public function get_categories()
 	{
-		return array('personal-portfolio');
+		return array('heliolisk');
 	}
 
 	public function get_keywords()
@@ -52,7 +52,6 @@ class Heliolisk_Whatido_Widget extends Widget_Base
 	protected function register_controls()
 	{
 		$this->register_content_text_controls();
-		$this->register_content_cards_controls();
 		$this->register_content_cards_controls();
 
 		$this->register_style_kicker_controls();

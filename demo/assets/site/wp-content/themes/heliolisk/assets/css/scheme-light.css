@@ -1,0 +1,195 @@
+/* ==========================================================================
+   Heliolisk — Light color scheme (Customizer → Heliolisk Options → Color Scheme)
+   Loaded only when the scheme is "Light". Re-points the design tokens from
+   style.css to a clean white, monochrome look, then restyles the pieces
+   that hard-code dark gradients.
+   ========================================================================== */
+
+body.heliolisk-scheme-light{
+  --bg:#ffffff;
+  --bg-2:#f7f7f7;
+  --surface:#ffffff;
+  --text:#111111;
+  --text-mut:#555555;
+  --text-faint:#777777;
+  --red:#111111;
+  --red-bright:#555555;
+  --border:#e6e6e6;
+
+  --bs-body-bg:var(--bg);
+  --bs-body-color:var(--text-mut);
+  --bs-heading-color:var(--text);
+  --bs-link-color:var(--text);
+  --bs-link-hover-color:var(--text-mut);
+  --bs-border-color:var(--border);
+  --bs-primary-rgb:17,17,17;
+  --bs-emphasis-color:var(--text);
+
+  background:var(--bg);
+  color:var(--text-mut);
+}
+body.heliolisk-scheme-light h1,
+body.heliolisk-scheme-light h2,
+body.heliolisk-scheme-light h3,
+body.heliolisk-scheme-light h4{ font-family:'Inter',sans-serif; letter-spacing:-.02em; }
+body.heliolisk-scheme-light :focus-visible{ outline-color:#111; }
+body.heliolisk-scheme-light .scroll-progress{ box-shadow:none; }
+
+/* ---- Buttons ---- */
+body.heliolisk-scheme-light .btn{ text-transform:none; letter-spacing:0; --bs-btn-font-size:.95rem; --bs-btn-font-weight:500; }
+body.heliolisk-scheme-light .btn-primary{
+  --bs-btn-color:#fff; --bs-btn-bg:#111; --bs-btn-border-color:#111;
+  --bs-btn-hover-color:#fff; --bs-btn-hover-bg:#333; --bs-btn-hover-border-color:#333;
+  --bs-btn-active-color:#fff; --bs-btn-active-bg:#000; --bs-btn-active-border-color:#000;
+}
+body.heliolisk-scheme-light .btn-primary:hover{ box-shadow:none; }
+body.heliolisk-scheme-light .btn-ghost{
+  --bs-btn-color:#111; --bs-btn-border-color:var(--border);
+  --bs-btn-hover-color:#111; --bs-btn-hover-bg:#f5f5f5; --bs-btn-hover-border-color:#d4d4d4;
+  --bs-btn-active-color:#111; --bs-btn-active-bg:#eee; --bs-btn-active-border-color:#d4d4d4;
+}
+body.heliolisk-scheme-light .tag:hover{ border-color:#111; color:#111; }
+
+/* ---- Header ---- */
+body.heliolisk-scheme-light .site-header,
+body.heliolisk-scheme-light .site-header.scrolled{
+  background:rgba(255,255,255,.96); border-bottom:1px solid transparent; box-shadow:none;
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+}
+body.heliolisk-scheme-light .site-header.scrolled{ border-bottom-color:var(--border); }
+body.heliolisk-scheme-light .site-header .container{ height:96px; }
+body.heliolisk-scheme-light .logo{ text-decoration:none; }
+body.heliolisk-scheme-light .logo-mark{ border-color:var(--border); background:#fff; }
+body.heliolisk-scheme-light .logo-word{
+  font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(1.5rem,2.4vw,2rem);
+  letter-spacing:-.03em; text-transform:none; color:#111;
+}
+body.heliolisk-scheme-light .site-header .nav-links a{ color:#333; text-transform:none; font-size:.95rem; }
+body.heliolisk-scheme-light .site-header .nav-links a:hover,
+body.heliolisk-scheme-light .nav-links-list > li > a.current-menu-item,
+body.heliolisk-scheme-light .nav-links-list > li.current_page_item > a{ color:#000; }
+body.heliolisk-scheme-light .nav-links-list .sub-menu{ background:#fff; box-shadow:0 20px 40px -20px rgba(0,0,0,.2); }
+body.heliolisk-scheme-light .nav-toggle:hover{ color:#000; }
+body.heliolisk-scheme-light .nav-backdrop{ background:rgba(255,255,255,.5); }
+@media (max-width:992px){
+  body.heliolisk-scheme-light .site-header .nav-links{ background:rgba(255,255,255,.97); box-shadow:-24px 0 60px rgba(0,0,0,.1); }
+  body.heliolisk-scheme-light .site-header .nav-links a{ color:#111; }
+}
+body.heliolisk-scheme-light .header-search-toggle{ color:#111; }
+body.heliolisk-scheme-light .header-search-toggle:hover,
+body.heliolisk-scheme-light .header-search-toggle[aria-expanded="true"]{ color:#000; border-color:#111; }
+body.heliolisk-scheme-light .socials a:hover{ color:#000; }
+
+/* ---- Search overlay ---- */
+body.heliolisk-scheme-light .search-overlay-backdrop{ background:rgba(255,255,255,.9); }
+body.heliolisk-scheme-light .search-overlay-kicker{ color:#111; }
+body.heliolisk-scheme-light .search-overlay-close:hover{ color:#000; border-color:#111; }
+body.heliolisk-scheme-light .search-form--overlay .search-field{ box-shadow:0 30px 60px -30px rgba(0,0,0,.25); }
+
+/* ---- Page banner ---- */
+body.heliolisk-scheme-light .page-banner{ background:var(--bg); border-bottom:0; padding-block:96px 72px; }
+body.heliolisk-scheme-light .page-banner::before{ display:none; }
+/* Blog header: soft glow top-left, gradient eyebrow, dark hand-drawn arrow */
+body.heliolisk-scheme-light .page-banner--blog{
+  padding-block:120px 110px;
+  background:var(--bg) url(../images/blog/glow-4.png) no-repeat top left / contain;
+}
+body.heliolisk-scheme-light .page-banner-eyebrow{
+  background:linear-gradient(to top left, #959595 0%, #0D0D0D 46%, #010101 50%, #0A0A0A 53%, #4E4E4E 76%, #383838 87%, #1B1B1B 100%);
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+}
+body.heliolisk-scheme-light .page-banner--blog .page-banner-title{ color:#030303; }
+body.heliolisk-scheme-light .page-banner-arrow{ filter:none; opacity:1; }
+@media (max-width:992px){ body.heliolisk-scheme-light .page-banner--blog{ padding-block:90px 70px; } }
+body.heliolisk-scheme-light .page-banner:not(.page-banner--blog) .page-banner-title{
+  font-size:clamp(1.8rem,3vw,2.1rem); font-weight:400; text-transform:none; letter-spacing:-.01em; margin-top:0;
+}
+body.heliolisk-scheme-light .page-banner-kicker{ color:var(--text-faint); margin-bottom:14px; }
+body.heliolisk-scheme-light .page-banner-kicker .bar,
+body.heliolisk-scheme-light .post-kicker .bar{ background:var(--border); }
+body.heliolisk-scheme-light .page-banner-desc{ color:var(--text-mut); }
+body.heliolisk-scheme-light .heliolisk-breadcrumb ol{ text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:.88rem; }
+body.heliolisk-scheme-light .heliolisk-breadcrumb li,
+body.heliolisk-scheme-light .heliolisk-breadcrumb a{ color:var(--text-faint); }
+body.heliolisk-scheme-light .heliolisk-breadcrumb a:hover{ color:#111; }
+body.heliolisk-scheme-light .page-banner--single{ padding-block:56px 0; }
+body.heliolisk-scheme-light .page-banner--single .page-banner-title{ font-size:clamp(1.9rem,4vw,3rem); font-weight:500; margin-top:16px; }
+body.heliolisk-scheme-light .page-banner--compact{ padding-block:32px 0; }
+body.heliolisk-scheme-light .page-banner--compact .heliolisk-breadcrumb ol{ justify-content:flex-start; }
+body.heliolisk-scheme-light .page-banner--compact .container{ align-items:flex-start; }
+
+/* ---- Content area ---- */
+body.heliolisk-scheme-light .content-area{ padding-block:0 110px; }
+body.heliolisk-scheme-light .section--single,
+body.heliolisk-scheme-light .section--page{ padding-top:48px; }
+@media (min-width:992px){
+  body.heliolisk-scheme-light .content-area .row{ --bs-gutter-x:80px; }
+}
+/* ---- Blog UI: cream soft fills (accent color: blog.css → BLOG TOKENS) ---- */
+body.heliolisk-scheme-light{
+  --blog-soft:#f6f3ed;
+  --blog-field-border:rgba(0,0,0,.18);
+}
+body.heliolisk-scheme-light .post-badge{ color:#111; border-color:var(--border); }
+body.heliolisk-scheme-light .post-meta .hl-icon{ color:var(--text-faint); }
+body.heliolisk-scheme-light .view-case:hover{ color:#000; border-color:#000; }
+body.heliolisk-scheme-light .post-card-meta li.sep{ background:#030303; }
+
+/* ---- Single post / page ---- */
+body.heliolisk-scheme-light .entry-title{ text-transform:none; font-weight:500; }
+body.heliolisk-scheme-light .post-kicker{ color:var(--text-faint); }
+body.heliolisk-scheme-light .entry-media{ border-color:var(--border); }
+body.heliolisk-scheme-light .entry-content h2,
+body.heliolisk-scheme-light .entry-content h3,
+body.heliolisk-scheme-light .entry-content h4{ text-transform:none; }
+body.heliolisk-scheme-light .entry-content li::marker{ color:var(--text-faint); }
+body.heliolisk-scheme-light .entry-content a{ color:#111; }
+body.heliolisk-scheme-light .entry-content a:hover{ color:var(--text-mut); }
+body.heliolisk-scheme-light .entry-content blockquote,
+body.heliolisk-scheme-light .entry-content .wp-block-quote{ background:#f7f7f7; border-left-color:#111; }
+body.heliolisk-scheme-light .entry-content code{ background:#f2f2f2; color:#111; }
+body.heliolisk-scheme-light .entry-content pre{ background:#f7f7f7; }
+body.heliolisk-scheme-light .entry-content pre code{ color:#111; }
+body.heliolisk-scheme-light .entry-content th{ background:#fafafa; }
+body.heliolisk-scheme-light .section-subhead,
+body.heliolisk-scheme-light .entry-tags-label,
+body.heliolisk-scheme-light .page-links-title{ font-family:'Inter',sans-serif; text-transform:none; letter-spacing:0; font-weight:600; }
+body.heliolisk-scheme-light .share-btn:hover{ color:#000; border-color:#111; }
+body.heliolisk-scheme-light .share-btn.copied{ background:#111; border-color:#111; }
+body.heliolisk-scheme-light .author-box{ background:#fafafa; }
+body.heliolisk-scheme-light .author-box-avatar img{ border-color:var(--border); }
+body.heliolisk-scheme-light .author-box-name,
+body.heliolisk-scheme-light .post-nav-title,
+body.heliolisk-scheme-light .related-card-title,
+body.heliolisk-scheme-light .comment-author-name{ text-transform:none; font-family:'Inter',sans-serif; }
+body.heliolisk-scheme-light .post-nav-link:hover{ border-color:#d4d4d4; background:#fafafa; }
+body.heliolisk-scheme-light .post-nav-dir,
+body.heliolisk-scheme-light .comment-actions a,
+body.heliolisk-scheme-light .comment-awaiting,
+body.heliolisk-scheme-light .comment-reply-title small a,
+body.heliolisk-scheme-light .comment-form .logged-in-as a{ color:#111; }
+body.heliolisk-scheme-light .related-card:hover{ border-color:#d4d4d4; }
+body.heliolisk-scheme-light .comment-form input[type="text"],
+body.heliolisk-scheme-light .comment-form input[type="email"],
+body.heliolisk-scheme-light .comment-form input[type="url"],
+body.heliolisk-scheme-light .comment-form textarea{ background:#fff; color:#111; border-color:#dcdcdc; border-radius:0; }
+body.heliolisk-scheme-light .comment-form input:focus,
+body.heliolisk-scheme-light .comment-form textarea:focus{ border-color:#111; box-shadow:none; }
+
+/* ---- 404 ---- */
+body.heliolisk-scheme-light .error-404-code{ background:linear-gradient(180deg, #111 0%, rgba(17,17,17,.06) 95%); -webkit-background-clip:text; background-clip:text; }
+body.heliolisk-scheme-light .error-404-title{ text-transform:none; font-weight:500; }
+
+/* ---- Footer: light grey band, centered ---- */
+body.heliolisk-scheme-light .footer{ background:#f7f7f7; border-top:0; padding-block:40px; }
+body.heliolisk-scheme-light .footer-bottom{ justify-content:center !important; text-align:center; color:#111; font-size:.93rem; }
+body.heliolisk-scheme-light .footer-bottom p + p::before{ content:"·"; margin-right:8px; color:var(--text-faint); }
+
+/* ---- Back to top ---- */
+body.heliolisk-scheme-light .back-to-top{ background:#111; border-color:#111; box-shadow:0 10px 24px rgba(0,0,0,.2); }
+
+/* ---- Nice Select ---- */
+body.heliolisk-scheme-light .nice-select .list{ background-color:#fff; box-shadow:0 14px 30px rgba(0,0,0,.10); }
+body.heliolisk-scheme-light .nice-select .option:hover,
+body.heliolisk-scheme-light .nice-select .option.focus,
+body.heliolisk-scheme-light .nice-select .option.selected.focus{ background-color:#f3f3f3; color:var(--text); }

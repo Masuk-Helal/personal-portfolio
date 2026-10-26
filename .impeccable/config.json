@@ -1,0 +1,29 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "space grotesk",
+        "createdAt": "2026-10-02T09:53:40.931Z",
+        "reason": "theme author: Heliolisk's established type system, used site-wide across blog.css/scheme-light.css; predates this session"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-02T09:53:41.374Z",
+        "reason": "theme author: Heliolisk's established type system, used site-wide; predates this session"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "wp-content/themes/heliolisk/assets/css/content.css"
+        ],
+        "createdAt": "2026-10-11T13:13:46.617Z",
+        "reason": "assistant: false positive - .sticky.post-card::before is a 3px bar across the top edge of the card (inset: 0 0 auto 0), not a side stripe"
+      }
+    ]
+  }
+}

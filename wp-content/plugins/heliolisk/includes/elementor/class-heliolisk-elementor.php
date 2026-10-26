@@ -29,73 +29,79 @@ final class Heliolisk_Elementor
 				'class'      => 'Heliolisk_Hero_Widget',
 				'style'      => 'assets/css/hero-widget.css',
 				'script'     => 'assets/js/hero-widget.js',
-				'icon_image' => 'assets/images/hero-icon.jpg',
+				'icon_image' => 'assets/images/hero-icon.svg',
 			),
 			'about' => array(
 				'class'      => 'Heliolisk_About_Widget',
 				'style'      => 'assets/css/about-widget.css',
 				'script'     => null,
-				'icon_image' => 'assets/images/hero-icon.jpg',
+				'icon_image' => 'assets/images/hero-icon.svg',
 			),
 			'whatido' => array(
 				'class'      => 'Heliolisk_Whatido_Widget',
 				'style'      => 'assets/css/whatido-widget.css',
 				'script'     => null,
-				'icon_image' => 'assets/images/hero-icon.jpg',
+				'icon_image' => 'assets/images/hero-icon.svg',
 			),
 			'experience' => array(
 				'class'      => 'Heliolisk_Experience_Widget',
 				'style'      => 'assets/css/experience-widget.css',
 				'script'     => null,
-				'icon_image' => 'assets/images/hero-icon.jpg',
+				'icon_image' => 'assets/images/hero-icon.svg',
 			),
 			'numbers' => array(
 				'class'      => 'Heliolisk_Numbers_Widget',
 				'style'      => 'assets/css/numbers-widget.css',
 				'script'     => null,
-				'icon_image' => 'assets/images/hero-icon.jpg',
+				'icon_image' => 'assets/images/hero-icon.svg',
 			),
 			'skills' => array(
 				'class'      => 'Heliolisk_Skills_Widget',
 				'style'      => 'assets/css/skills-widget.css',
 				'script'     => null,
-				'icon_image' => 'assets/images/hero-icon.jpg',
+				'icon_image' => 'assets/images/hero-icon.svg',
 			),
 			'howiwork' => array(
 				'class'      => 'Heliolisk_Howiwork_Widget',
 				'style'      => 'assets/css/howiwork-widget.css',
 				'script'     => null,
-				'icon_image' => 'assets/images/hero-icon.jpg',
+				'icon_image' => 'assets/images/hero-icon.svg',
 			),
 			'collaborators' => array(
 				'class'      => 'Heliolisk_Collaborators_Widget',
 				'style'      => 'assets/css/collaborators-widget.css',
 				'script'     => null,
-				'icon_image' => 'assets/images/hero-icon.jpg',
+				'icon_image' => 'assets/images/hero-icon.svg',
 			),
 			'contact' => array(
 				'class'      => 'Heliolisk_Contact_Widget',
 				'style'      => 'assets/css/contact-widget.css',
 				'script'     => null,
-				'icon_image' => 'assets/images/hero-icon.jpg',
+				'icon_image' => 'assets/images/hero-icon.svg',
 			),
 			'blog' => array(
 				'class'      => 'Heliolisk_Blog_Widget',
 				'style'      => 'assets/css/blog-widget.css',
 				'script'     => null,
-				'icon_image' => 'assets/images/hero-icon.jpg',
+				'icon_image' => 'assets/images/hero-icon.svg',
 			),
 			'projects' => array(
 				'class'      => 'Heliolisk_Projects_Widget',
 				'style'      => 'assets/css/projects-widget.css',
 				'script'     => null,
-				'icon_image' => 'assets/images/hero-icon.jpg',
+				'icon_image' => 'assets/images/hero-icon.svg',
+			),
+			'header' => array(
+				'class'      => 'Heliolisk_Header_Widget',
+				'style'      => 'assets/css/header-widget.css',
+				'script'     => 'assets/js/header-widget.js',
+				'icon_image' => 'assets/images/hero-icon.svg',
 			),
 			'footer' => array(
 				'class'      => 'Heliolisk_Footer_Widget',
 				'style'      => 'assets/css/footer-widget.css',
 				'script'     => null,
-				'icon_image' => 'assets/images/hero-icon.jpg',
+				'icon_image' => 'assets/images/hero-icon.svg',
 			),
 		);
 	}
@@ -173,16 +179,16 @@ final class Heliolisk_Elementor
 	}
 
 	/**
-	 * Adds a dedicated "Personal Portfolio" widget category.
+	 * Adds a dedicated "Heliolisk" widget category.
 	 *
 	 * @param \Elementor\Elements_Manager $elements_manager Elementor elements manager.
 	 */
 	public function register_category($elements_manager)
 	{
 		$elements_manager->add_category(
-			'personal-portfolio',
+			'heliolisk',
 			array(
-				'title' => __('Personal Portfolio', 'heliolisk'),
+				'title' => __('Heliolisk', 'heliolisk'),
 				'icon'  => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
 							<defs>
 								<linearGradient id="bolt-gradient" x1="0" y1="0" x2="0" y2="1">

@@ -29,7 +29,7 @@ class Heliolisk_Collaborators_Widget extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return array( 'personal-portfolio' );
+		return array( 'heliolisk' );
 	}
 
 	public function get_keywords() {
@@ -159,14 +159,14 @@ class Heliolisk_Collaborators_Widget extends Widget_Base {
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => array(
-					array( 'alt' => __( 'bKash', 'heliolisk' ) ),
-					array( 'alt' => __( 'The Daily Star', 'heliolisk' ) ),
-					array( 'alt' => __( 'VUMI Group', 'heliolisk' ) ),
-					array( 'alt' => __( 'CMED Health', 'heliolisk' ) ),
-					array( 'alt' => __( 'United Commercial Bank (UCB)', 'heliolisk' ) ),
-					array( 'alt' => __( 'Editorial News 24', 'heliolisk' ) ),
-					array( 'alt' => __( '10 Minute School', 'heliolisk' ) ),
-					array( 'alt' => __( 'Newspaper Olympiad', 'heliolisk' ) ),
+					array( 'alt' => __( 'Brand One', 'heliolisk' ) ),
+					array( 'alt' => __( 'Brand Two', 'heliolisk' ) ),
+					array( 'alt' => __( 'Brand Three', 'heliolisk' ) ),
+					array( 'alt' => __( 'Brand Four', 'heliolisk' ) ),
+					array( 'alt' => __( 'Brand Five', 'heliolisk' ) ),
+					array( 'alt' => __( 'Brand Six', 'heliolisk' ) ),
+					array( 'alt' => __( 'Brand Seven', 'heliolisk' ) ),
+					array( 'alt' => __( 'Brand Eight', 'heliolisk' ) ),
 				),
 				'title_field' => '{{{ alt }}}',
 			)

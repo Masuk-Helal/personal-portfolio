@@ -30,7 +30,7 @@ class Heliolisk_Experience_Widget extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return array( 'personal-portfolio' );
+		return array( 'heliolisk' );
 	}
 
 	public function get_keywords() {
@@ -199,64 +199,53 @@ class Heliolisk_Experience_Widget extends Widget_Base {
 				'fields'      => $item->get_controls(),
 				'default'     => array(
 					array(
-						'org_name' => __( '10 Minute School', 'heliolisk' ),
-						'org_date' => __( 'Nov 2023 — Present', 'heliolisk' ),
+						'org_name' => __( 'Company One', 'heliolisk' ),
+						'org_date' => __( 'Jan 2023 — Present', 'heliolisk' ),
 						'positions' => array(
 							array(
-								'title'       => __( 'Executive (Content Operations)', 'heliolisk' ),
-								'date'        => __( 'Jan 2026 — Present', 'heliolisk' ),
-								'meta'        => __( 'Full-time · Mohakhali, Dhaka', 'heliolisk' ),
-								'description' => __( "Oversees end-to-end LIVE and recorded class operations on 10 Minute School's Class Operations & Productions (COP) team — live-streaming management, studio operations, content editing & publishing, platform management across CMS, CMS-360 and Teacher's Dashboard, cross-functional coordination and team development.", 'heliolisk' ),
-								'quote'       => __( "We don't stand in the spotlight. But we make sure the spotlight never goes out.", 'heliolisk' ),
+								'title'       => __( 'Senior Role Title', 'heliolisk' ),
+								'date'        => __( 'Jan 2025 — Present', 'heliolisk' ),
+								'meta'        => __( 'Full-time · City', 'heliolisk' ),
+								'description' => __( 'Describe your responsibilities, the team you work with and the results you deliver in this role.', 'heliolisk' ),
+								'quote'       => __( 'A short line that sums up how you work.', 'heliolisk' ),
 							),
 							array(
-								'title'       => __( 'Operations Coordinator – Content', 'heliolisk' ),
-								'date'        => __( 'Nov 2023 — Dec 2025', 'heliolisk' ),
-								'meta'        => __( 'Contractual · Mohakhali, Dhaka', 'heliolisk' ),
-								'description' => __( 'Crafting engaging, impactful educational materials as part of the Content Operations team.', 'heliolisk' ),
+								'title'       => __( 'Role Title', 'heliolisk' ),
+								'date'        => __( 'Jan 2023 — Dec 2024', 'heliolisk' ),
+								'meta'        => __( 'Contract · City', 'heliolisk' ),
+								'description' => __( 'A short summary of what you worked on and what you achieved.', 'heliolisk' ),
 							),
 						),
 						'tags' => array(
-							array( 'tag_text' => __( 'Live Class Operations', 'heliolisk' ) ),
-							array( 'tag_text' => __( 'Recorded Content Operations', 'heliolisk' ) ),
-							array( 'tag_text' => __( 'Operational Reporting', 'heliolisk' ) ),
-							array( 'tag_text' => __( 'Studio Coordination', 'heliolisk' ) ),
-							array( 'tag_text' => __( 'Teacher Communication', 'heliolisk' ) ),
-							array( 'tag_text' => __( 'Dashboard & CMS Management', 'heliolisk' ) ),
-							array( 'tag_text' => __( 'Asset & Technical Coordination', 'heliolisk' ) ),
-							array( 'tag_text' => __( 'Cross-functional Collaboration', 'heliolisk' ) ),
-							array( 'tag_text' => __( 'Process Improvement', 'heliolisk' ) ),
+							array( 'tag_text' => __( 'Skill One', 'heliolisk' ) ),
+							array( 'tag_text' => __( 'Skill Two', 'heliolisk' ) ),
+							array( 'tag_text' => __( 'Skill Three', 'heliolisk' ) ),
+							array( 'tag_text' => __( 'Skill Four', 'heliolisk' ) ),
 						),
 					),
 					array(
-						'org_name' => __( 'National Newspaper Olympiad (NNO Global)', 'heliolisk' ),
-						'org_date' => __( 'Mar 2025 — Present', 'heliolisk' ),
+						'org_name' => __( 'Company Two', 'heliolisk' ),
+						'org_date' => __( 'Mar 2021 — Dec 2022', 'heliolisk' ),
 						'positions' => array(
 							array(
-								'title'       => __( 'Chief Marketing Officer', 'heliolisk' ),
-								'date'        => __( 'Dec 2025 — Present', 'heliolisk' ),
-								'meta'        => __( 'Part-time · Dhaka · Hybrid', 'heliolisk' ),
-								'description' => __( 'Leading strategic marketing management, communications and public relations.', 'heliolisk' ),
+								'title'       => __( 'Role Title', 'heliolisk' ),
+								'date'        => __( 'Jun 2021 — Dec 2022', 'heliolisk' ),
+								'meta'        => __( 'Part-time · Remote', 'heliolisk' ),
+								'description' => __( 'Leading a workstream and reporting on its results.', 'heliolisk' ),
 							),
 							array(
-								'title'       => __( 'Communications Executive', 'heliolisk' ),
-								'date'        => __( 'Mar 2025 — Dec 2025', 'heliolisk' ),
-								'meta'        => __( 'Seasonal · Dhaka', 'heliolisk' ),
-								'description' => __( 'Contributed to purpose-driven storytelling and creative collaboration.', 'heliolisk' ),
+								'title'       => __( 'Junior Role Title', 'heliolisk' ),
+								'date'        => __( 'Mar 2021 — May 2021', 'heliolisk' ),
+								'meta'        => __( 'Seasonal · City', 'heliolisk' ),
+								'description' => __( 'Contributed to projects and learned the team\'s tools and processes.', 'heliolisk' ),
 							),
 						),
 					),
 					array(
-						'org_name'        => __( 'Content Writer', 'heliolisk' ),
-						'org_date'        => __( 'Apr 2023 — Nov 2023', 'heliolisk' ),
-						'org_meta'        => __( 'Editorial News 24 · Internship', 'heliolisk' ),
-						'org_description' => __( 'Research, storytelling, editing, SEO, deadline management and engaging audiences.', 'heliolisk' ),
-					),
-					array(
-						'org_name'        => __( 'UX Research Assistant', 'heliolisk' ),
-						'org_date'        => __( 'Jul 2022 · 1 mo', 'heliolisk' ),
-						'org_meta'        => __( 'CMED Health · Part-time', 'heliolisk' ),
-						'org_description' => __( 'Drove user-centric insights for product enhancement through diverse research methodologies and actionable recommendations.', 'heliolisk' ),
+						'org_name'        => __( 'Single Role Title', 'heliolisk' ),
+						'org_date'        => __( 'Apr 2020 — Nov 2020', 'heliolisk' ),
+						'org_meta'        => __( 'Company Three · Internship', 'heliolisk' ),
+						'org_description' => __( 'Research, writing, editing and meeting deadlines.', 'heliolisk' ),
 					),
 				),
 				'title_field' => '{{{ org_name }}}',
@@ -368,17 +357,17 @@ class Heliolisk_Experience_Widget extends Widget_Base {
 						'heading' => __( 'Leadership & Activities', 'heliolisk' ),
 						'items'   => array(
 							array(
-								'title' => __( 'UIU Finance Forum', 'heliolisk' ),
+								'title' => __( 'Club or Organization', 'heliolisk' ),
 								'date'  => __( 'Jun 2022 — Present', 'heliolisk' ),
 								'positions' => array(
-									array( 'title' => __( 'Co-Head of Brand', 'heliolisk' ), 'date' => __( 'Feb 2023 — Present', 'heliolisk' ) ),
+									array( 'title' => __( 'Lead Role', 'heliolisk' ), 'date' => __( 'Feb 2023 — Present', 'heliolisk' ) ),
 									array( 'title' => __( 'Member', 'heliolisk' ), 'date' => __( 'Jun 2022 — Present', 'heliolisk' ) ),
 								),
 							),
 							array(
-								'title' => __( 'Publication Secretary', 'heliolisk' ),
+								'title' => __( 'Committee Role', 'heliolisk' ),
 								'date'  => __( 'Nov 2020 — Sep 2021', 'heliolisk' ),
-								'org'   => __( 'Science Club of Rouf College (SCRC)', 'heliolisk' ),
+								'org'   => __( 'Another Organization', 'heliolisk' ),
 							),
 						),
 					),
@@ -386,19 +375,14 @@ class Heliolisk_Experience_Widget extends Widget_Base {
 						'heading' => __( 'Education', 'heliolisk' ),
 						'items'   => array(
 							array(
-								'title' => __( 'BBA, Business Administration', 'heliolisk' ),
-								'date'  => __( 'Jun 2022 — Present', 'heliolisk' ),
-								'org'   => __( 'United International University', 'heliolisk' ),
+								'title' => __( 'Degree, Field of Study', 'heliolisk' ),
+								'date'  => __( '2018 — 2022', 'heliolisk' ),
+								'org'   => __( 'University Name', 'heliolisk' ),
 							),
 							array(
-								'title' => __( 'HSC', 'heliolisk' ),
-								'date'  => __( '2020', 'heliolisk' ),
-								'org'   => __( 'Birshreshtha Munshi Abdur Rouf Public College · Dhaka Board', 'heliolisk' ),
-							),
-							array(
-								'title' => __( 'SSC', 'heliolisk' ),
-								'date'  => __( '2018', 'heliolisk' ),
-								'org'   => __( 'Jhalakati Govt. High School · Barisal Board', 'heliolisk' ),
+								'title' => __( 'Higher Secondary', 'heliolisk' ),
+								'date'  => __( '2016', 'heliolisk' ),
+								'org'   => __( 'College Name', 'heliolisk' ),
 							),
 						),
 					),
@@ -406,19 +390,14 @@ class Heliolisk_Experience_Widget extends Widget_Base {
 						'heading' => __( 'Certificates & Achievements', 'heliolisk' ),
 						'items'   => array(
 							array(
-								'title' => __( 'Organizer, "The Excelist 2022"', 'heliolisk' ),
-								'date'  => __( 'Dec 2022', 'heliolisk' ),
-								'org'   => __( 'Microsoft-authorized event, powered by VUMI', 'heliolisk' ),
-							),
-							array(
-								'title' => __( 'SCRC 2nd National Science Festival', 'heliolisk' ),
-								'date'  => __( 'Jan 2020', 'heliolisk' ),
-								'org'   => __( 'Organizer · Science Club of Rouf College', 'heliolisk' ),
-							),
-							array(
-								'title' => __( 'Certificate of UX Research Completion', 'heliolisk' ),
+								'title' => __( 'Certificate Title', 'heliolisk' ),
 								'date'  => __( 'Jul 2022', 'heliolisk' ),
-								'org'   => __( 'CMED Health', 'heliolisk' ),
+								'org'   => __( 'Issuing Organization', 'heliolisk' ),
+							),
+							array(
+								'title' => __( 'Award or Event', 'heliolisk' ),
+								'date'  => __( 'Dec 2021', 'heliolisk' ),
+								'org'   => __( 'Organizer', 'heliolisk' ),
 							),
 						),
 					),

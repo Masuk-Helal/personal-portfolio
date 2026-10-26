@@ -1,0 +1,26 @@
+
+---Downloaded files---
+The import files for: Heliolisk Portfolio were successfully downloaded!
+Initial max execution time = 36000
+Files info:
+Site URL = http://personal-portfolio.test
+Data file = D:\laragon\www\personal-portfolio/wp-content/themes/heliolisk/demo-data/content.xml
+Widget file = D:\laragon\www\personal-portfolio/wp-content/themes/heliolisk/demo-data/widget.wie
+Customizer file = D:\laragon\www\personal-portfolio/wp-content/themes/heliolisk/demo-data/customizer.dat
+Redux files:
+not defined!
+
+---Importing widgets---
+Right Sidebar : 
+
+Block - No Title - Widget already exists
+Block - No Title - Widget already exists
+Block - No Title - Widget already exists
+
+
+
+---Importing customizer settings---
+Customizer settings import finished!
+
+---ocdi/after_import---
+

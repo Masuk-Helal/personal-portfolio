@@ -1,0 +1,104 @@
+/* Heliolisk How I Work widget — fully self-contained, no theme dependency. */
+
+.hlw-howiwork,
+.hlw-howiwork *,
+.hlw-howiwork *::before,
+.hlw-howiwork *::after {
+	box-sizing: border-box;
+}
+
+.hlw-howiwork {
+	background-color: #101010;
+	color: #f4f5fb;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	padding: 96px 24px;
+	border-top: 1px solid #242438;
+	border-bottom: 1px solid #242438;
+}
+
+.hlw-howiwork__inner {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.hlw-howiwork__eyebrow {
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+	margin-bottom: 26px;
+}
+
+.hlw-howiwork__eyebrow-num {
+	font-weight: 600;
+	color: #8b5cf6;
+	font-size: 18px;
+}
+
+.hlw-howiwork__eyebrow-lbl {
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.16em;
+	font-size: 17px;
+	color: #a9a9b8;
+}
+
+.hlw-howiwork__eyebrow-line {
+	flex: 1;
+	height: 1px;
+	background: #242438;
+	margin-left: 6px;
+}
+
+.hlw-howiwork__statement {
+	margin: 0 0 48px;
+	font-family: 'Space Grotesk', 'Inter', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: clamp(1.5rem, 3vw, 2.3rem);
+	line-height: 1.25;
+	max-width: 20ch;
+	color: #f4f5fb;
+}
+
+.hlw-howiwork__principles {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 32px;
+}
+
+.hlw-howiwork__p-num {
+	font-family: 'Space Grotesk', 'Inter', sans-serif;
+	font-weight: 700;
+	font-size: 2.4rem;
+	line-height: 1;
+	color: #242438;
+	margin-bottom: 16px;
+}
+
+.hlw-howiwork__principle h3 {
+	margin: 0 0 10px;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: #f4f5fb;
+}
+
+.hlw-howiwork__principle p {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #a9a9b8;
+}
+
+@media (max-width: 900px) {
+	.hlw-howiwork__principles {
+		grid-template-columns: 1fr;
+		gap: 28px;
+	}
+}
+
+@media (max-width: 560px) {
+	.hlw-howiwork {
+		padding: 64px 18px;
+	}
+}

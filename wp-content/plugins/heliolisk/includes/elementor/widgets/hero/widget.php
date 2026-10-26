@@ -33,7 +33,7 @@ class Heliolisk_Hero_Widget extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return array( 'personal-portfolio' );
+		return array( 'heliolisk' );
 	}
 
 	public function get_keywords() {
@@ -80,7 +80,7 @@ class Heliolisk_Hero_Widget extends Widget_Base {
 			array(
 				'label'   => __( 'Kicker', 'heliolisk' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'S.M. REFAT AREFIN', 'heliolisk' ),
+				'default' => __( 'YOUR NAME', 'heliolisk' ),
 			)
 		);
 
@@ -101,7 +101,7 @@ class Heliolisk_Hero_Widget extends Widget_Base {
 			array(
 				'label'   => __( 'Role Line', 'heliolisk' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Business Analytics · Operations · Technology · Marketing', 'heliolisk' ),
+				'default' => __( 'Analytics · Operations · Technology · Marketing', 'heliolisk' ),
 			)
 		);
 
@@ -146,7 +146,7 @@ class Heliolisk_Hero_Widget extends Widget_Base {
 			array(
 				'label'   => __( 'Description', 'heliolisk' ),
 				'type'    => Controls_Manager::TEXTAREA,
-				'default' => __( 'Business Analytics student and EdTech operations professional working at the intersection of data, operations, technology and digital content.', 'heliolisk' ),
+				'default' => __( 'Analyst and operations professional working at the intersection of data, operations, technology and digital content.', 'heliolisk' ),
 			)
 		);
 
@@ -261,7 +261,7 @@ class Heliolisk_Hero_Widget extends Widget_Base {
 			array(
 				'label'   => __( 'Value', 'heliolisk' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( '3.6+', 'heliolisk' ),
+				'default' => __( '5+', 'heliolisk' ),
 			)
 		);
 
@@ -324,20 +324,20 @@ class Heliolisk_Hero_Widget extends Widget_Base {
 				'fields'      => $repeater->get_controls(),
 				'default'     => array(
 					array(
-						'value'         => '3.6+',
+						'value'         => '5+',
 						'label'         => __( 'Years Professional Experience', 'heliolisk' ),
 						'enable_count'  => 'yes',
-						'count_number'  => 3.6,
-						'count_decimals'=> 1,
+						'count_number'  => 5,
+						'count_decimals'=> 0,
 						'count_suffix'  => '+',
 					),
 					array(
-						'value' => 'BBA',
-						'label' => __( 'Business Analytics', 'heliolisk' ),
+						'value' => '12+',
+						'label' => __( 'Projects Delivered', 'heliolisk' ),
 					),
 					array(
 						'value'         => '02',
-						'label'         => __( 'Core Industry — EdTech and Marketing', 'heliolisk' ),
+						'label'         => __( 'Core Industries', 'heliolisk' ),
 						'enable_count'  => 'yes',
 						'count_number'  => 2,
 						'count_decimals'=> 0,
