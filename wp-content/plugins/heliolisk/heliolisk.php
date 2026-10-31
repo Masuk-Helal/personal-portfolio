@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Heliolisk
  * Plugin URI:        https://themeforest.net/user/heliolisk
- * Description:       Companion plugin for the Heliolisk theme: Projects, Header and Footer post types, 13 Elementor widgets and sidebar widgets.
+ * Description:       Companion plugin for the Heliolisk theme: Projects, Header and Footer post types, 16 Elementor widgets and sidebar widgets.
  * Version:           1.2.0
  * Requires at least: 5.8
  * Requires PHP:      7.4

@@ -31,6 +31,60 @@ final class Heliolisk_Elementor
 				'script'     => 'assets/js/hero-widget.js',
 				'icon_image' => 'assets/images/hero-icon.svg',
 			),
+			'law-hero' => array(
+				'class'      => 'Heliolisk_Law_Hero_Widget',
+				'style'      => 'assets/css/law-hero-widget.css',
+				'script'     => null,
+				'icon_image' => 'assets/images/hero-icon.svg',
+			),
+			'law-about' => array(
+				'class'      => 'Heliolisk_Law_About_Widget',
+				'style'      => 'assets/css/law-about-widget.css',
+				'script'     => null,
+				'icon_image' => 'assets/images/hero-icon.svg',
+			),
+			'law-practice' => array(
+				'class'      => 'Heliolisk_Law_Practice_Widget',
+				'style'      => 'assets/css/law-practice-widget.css',
+				'script'     => null,
+				'icon_image' => 'assets/images/hero-icon.svg',
+			),
+			'law-journey' => array(
+				'class'      => 'Heliolisk_Law_Journey_Widget',
+				'style'      => 'assets/css/law-journey-widget.css',
+				'script'     => null,
+				'icon_image' => 'assets/images/hero-icon.svg',
+			),
+			'law-experience' => array(
+				'class'      => 'Heliolisk_Law_Experience_Widget',
+				'style'      => 'assets/css/law-experience-widget.css',
+				'script'     => null,
+				'icon_image' => 'assets/images/hero-icon.svg',
+			),
+			'law-research' => array(
+				'class'      => 'Heliolisk_Law_Research_Widget',
+				'style'      => 'assets/css/law-research-widget.css',
+				'script'     => null,
+				'icon_image' => 'assets/images/hero-icon.svg',
+			),
+			'law-skills' => array(
+				'class'      => 'Heliolisk_Law_Skills_Widget',
+				'style'      => 'assets/css/law-skills-widget.css',
+				'script'     => null,
+				'icon_image' => 'assets/images/hero-icon.svg',
+			),
+			'law-achievements' => array(
+				'class'      => 'Heliolisk_Law_Achievements_Widget',
+				'style'      => 'assets/css/law-achievements-widget.css',
+				'script'     => null,
+				'icon_image' => 'assets/images/hero-icon.svg',
+			),
+			'law-contact' => array(
+				'class'      => 'Heliolisk_Law_Contact_Widget',
+				'style'      => 'assets/css/law-contact-widget.css',
+				'script'     => null,
+				'icon_image' => 'assets/images/hero-icon.svg',
+			),
 			'about' => array(
 				'class'      => 'Heliolisk_About_Widget',
 				'style'      => 'assets/css/about-widget.css',
@@ -213,6 +267,13 @@ final class Heliolisk_Elementor
 	{
 		$widgets_url  = HELIOLISK_PLUGIN_URL . 'includes/elementor/widgets/';
 		$widgets_path = __DIR__ . '/widgets/';
+
+		wp_register_style(
+			'heliolisk-law-fonts',
+			'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap',
+			array(),
+			null
+		);
 
 		foreach (self::widgets() as $slug => $widget) {
 			if ($widget['style']) {

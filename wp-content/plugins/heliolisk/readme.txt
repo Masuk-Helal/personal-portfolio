@@ -7,7 +7,7 @@ Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Companion plugin for the Heliolisk theme: Projects, Header and Footer post types, 13 Elementor widgets and sidebar widgets.
+Companion plugin for the Heliolisk theme: Projects, Header and Footer post types, 16 Elementor widgets and sidebar widgets.
 
 == Description ==
 
@@ -16,8 +16,9 @@ your content if you ever change theme.
 
 * Projects post type with categories and tags
 * Header and Footer post types for the Elementor header/footer builder
-* 13 Elementor widgets: Header, Hero, About, What I Do, Projects, Experience,
-  By The Numbers, Skills, How I Work, Blog, Collaborators, Contact CTA, Footer
+* 16 Elementor widgets: Header, Hero, Law Hero, Law About, Law Practice, About, What I Do,
+  Projects, Experience, By The Numbers, Skills, How I Work, Blog, Collaborators,
+  Contact CTA, Footer
 * Sidebar widgets: Categories, Top Stories, Tags, Banner
 * Demo import helper (serves the demo images and links the imported header,
   footer, front page and menu)
